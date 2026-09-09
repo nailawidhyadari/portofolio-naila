@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <section id="kontak" className="scroll-mt-20 border-t border-border bg-glow">
       <div className="mx-auto max-w-5xl px-5 py-20 text-center">
-        <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+        <h2 className="fluid-h2 font-bold tracking-tight">
           Mari <span className="text-gradient">Bekerja Sama</span>
         </h2>
         <p className="mx-auto mt-3 max-w-lg text-muted">

@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section id="tentang" className="scroll-mt-20 border-t border-border">
       <div className="mx-auto max-w-5xl px-5 py-20">
-        <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+        <h2 className="fluid-h2 font-bold tracking-tight">
           Tentang <span className="text-gradient">Saya</span>
         </h2>
 

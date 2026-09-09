@@ -8,17 +8,25 @@ export const profile = {
   role: "Web Developer",
   tagline:
     "Saya membangun website yang cepat, rapi, dan mudah dikelola — dari ide sampai online.",
+
+  // -----------------------------------------------------------
+  //  TENTANG SAYA — PLACEHOLDER.
+  //  Ganti paragraf di bawah dengan perkenalan versi Anda
+  //  (kirimkan poin-poinnya, nanti dirapikan jadi paragraf).
+  // -----------------------------------------------------------
   about: [
-    "Halo, saya Naila Widhyadari. Saya seorang web developer yang berfokus pada pembuatan website untuk kebutuhan bisnis dan layanan.",
-    "Selama beberapa tahun terakhir saya sudah membangun dan merilis sejumlah website yang aktif digunakan, mulai dari landing page layanan, platform bimbingan, sampai situs company profile.",
-    "Saya terbiasa menangani keseluruhan proses: desain tampilan, pengembangan front-end, integrasi, sampai deployment ke server produksi.",
+    "Halo, saya Naila Widhyadari — seorang web developer yang senang mengubah ide menjadi website yang benar-benar dipakai orang.",
+    "Fokus saya adalah membangun tampilan yang bersih dan responsif, menata konten agar mudah ditemukan di mesin pencari, serta memastikan situs berjalan stabil setelah rilis.",
+    "Saya pernah menjadi bagian dari tim di Telkom Indonesia, Balai Besar Pengujian Perangkat Telekomunikasi (BBPPT), dan PT Lentera Statistics Indonesia — pengalaman yang mengasah cara saya bekerja secara terstruktur dan detail.",
   ],
+
   // Ganti angka di bawah kalau perlu.
   stats: [
     { value: "5+", label: "Website dirilis" },
-    { value: "3+", label: "Tahun pengalaman" },
-    { value: "100%", label: "Proyek online" },
+    { value: "3", label: "Instansi / perusahaan" },
+    { value: "6", label: "Sertifikat" },
   ],
+
   skills: [
     "Next.js",
     "React",
@@ -27,10 +35,13 @@ export const profile = {
     "Node.js",
     "HTML & CSS",
     "JavaScript",
+    "PHP",
     "WordPress",
     "SEO On-Page",
     "Git & GitHub",
     "Vercel",
+    "Networking Dasar",
+    "AWS Cloud (Dasar)",
     "Responsive Design",
   ],
 };
@@ -43,9 +54,119 @@ export const contact = {
   email: "",
 };
 
+// =============================================================
+//  PENGALAMAN KERJA
+//  role / period / description masih PLACEHOLDER —
+//  kirimkan posisi, periode (bln–thn), dan tugas utamanya.
+// =============================================================
+export type Experience = {
+  company: string;
+  logo: string;
+  logoAlt: string;
+  role: string;
+  period: string;
+  description: string;
+};
+
+export const experiences: Experience[] = [
+  {
+    company: "Telkom Indonesia",
+    logo: "/logos/telkom.svg",
+    logoAlt: "Logo Telkom Indonesia",
+    role: "— (isi posisi Anda)",
+    period: "— (bln thn – bln thn)",
+    description:
+      "Placeholder: 1–2 kalimat tentang peran dan tugas utama Anda selama di Telkom Indonesia.",
+  },
+  {
+    company: "Balai Besar Pengujian Perangkat Telekomunikasi (BBPPT)",
+    logo: "/logos/bbppt-idth.png",
+    logoAlt: "Logo Komdigi — Indonesia Digital Test House (BBPPT)",
+    role: "— (isi posisi Anda)",
+    period: "— (bln thn – bln thn)",
+    description:
+      "Placeholder: 1–2 kalimat tentang peran dan tugas utama Anda selama di BBPPT / IDTH.",
+  },
+  {
+    company: "PT Lentera Statistics Indonesia",
+    logo: "/logos/lentera-statistik.png",
+    logoAlt: "Logo PT Lentera Statistics Indonesia",
+    role: "— (isi posisi Anda)",
+    period: "— (bln thn – bln thn)",
+    description:
+      "Placeholder: 1–2 kalimat tentang peran Anda — mis. membangun dan memelihara website layanan bimbingan akademik.",
+  },
+];
+
+// =============================================================
+//  SERTIFIKAT (data asli dari folder "bahan web")
+//  pdf: "" berarti kartu tampil tanpa tombol lihat PDF.
+// =============================================================
+export type Certificate = {
+  title: string;
+  issuer: string;
+  date: string;
+  pdf: string;
+  tag: string;
+};
+
+export const certificates: Certificate[] = [
+  {
+    title: "Cloud Practitioner Essentials (Belajar Dasar AWS Cloud)",
+    issuer: "Dicoding × Amazon Web Services",
+    date: "Juli 2024",
+    pdf: "/certificates/aws-cloud-practitioner.pdf",
+    tag: "Cloud",
+  },
+  {
+    title:
+      "DevCoach 137 — Front-End: Belajar Cara Berkomunikasi Web dengan Server",
+    issuer: "Dicoding Event",
+    date: "Maret 2024",
+    pdf: "/certificates/devcoach-137-frontend.pdf",
+    tag: "Front-End",
+  },
+  {
+    title: "Desain dan Konten Mengenal PHP Framework (MOOCs)",
+    issuer: "Universitas Terbuka",
+    date: "Oktober 2025",
+    pdf: "/certificates/php-framework-ut.pdf",
+    tag: "Back-End",
+  },
+  {
+    title: 'Netclass "Exploring Cybersecurity and Networking" — Networking',
+    issuer: "NETCOMP 3.0 — Universitas Gadjah Mada",
+    date: "Oktober 2024",
+    pdf: "/certificates/netcomp-networking.pdf",
+    tag: "Networking",
+  },
+  {
+    title: "CONNECT Class: Effective Communication / Public Speaking",
+    issuer: "Universitas Indonesia × Indonesia Digital Test House (BBPPT)",
+    date: "Desember 2025",
+    pdf: "/certificates/connect-class-public-speaking.pdf",
+    tag: "Soft Skill",
+  },
+  {
+    title:
+      "Perancangan Sistem Otomatisasi Pertanian Berbasis Arduino & ESP32 (Lulus, 40 jam)",
+    issuer: "BPVP Belitung — Kementerian Ketenagakerjaan RI",
+    date: "Mei 2026",
+    pdf: "", // sengaja tidak dipublikasikan: file memuat alamat rumah
+    tag: "IoT",
+  },
+];
+
+// =============================================================
+//  PROYEK
+//  Screenshot halaman depan tiap situs ada di /public/portfolio.
+//  "summary" & "contributions" masih placeholder umum —
+//  silakan sesuaikan dengan detail sebenarnya.
+// =============================================================
 export type Project = {
   name: string;
   url: string;
+  image: string;
   year: string;
   category: string;
   summary: string;
@@ -53,15 +174,11 @@ export type Project = {
   stack: string[];
 };
 
-// -------------------------------------------------------------
-//  PROYEK — teks di bawah ini masih placeholder umum.
-//  Silakan sesuaikan "summary", "contributions", dan "year"
-//  dengan detail yang sebenarnya.
-// -------------------------------------------------------------
 export const projects: Project[] = [
   {
     name: "bimbingandosen.com",
     url: "https://bimbingandosen.com",
+    image: "/portfolio/bimbingandosen.jpg",
     year: "2024",
     category: "Platform Layanan",
     summary:
@@ -77,6 +194,7 @@ export const projects: Project[] = [
   {
     name: "bimbingancerdas.id",
     url: "https://bimbingancerdas.id",
+    image: "/portfolio/bimbingancerdas.jpg",
     year: "2024",
     category: "Platform Bimbingan",
     summary:
@@ -92,6 +210,7 @@ export const projects: Project[] = [
   {
     name: "tuntasskripsi.com",
     url: "https://tuntasskripsi.com",
+    image: "/portfolio/tuntasskripsi.jpg",
     year: "2023",
     category: "Landing Page Layanan",
     summary:
@@ -107,10 +226,11 @@ export const projects: Project[] = [
   {
     name: "solusiskripsi.com",
     url: "https://solusiskripsi.com",
+    image: "/portfolio/solusiskripsi.jpg",
     year: "2023",
     category: "Landing Page Layanan",
     summary:
-      "Website informasi layanan konsultasi dan pendampingan skripsi dengan halaman detail layanan dan kontak.",
+      "Website informasi layanan konsultasi dan pendampingan skripsi dengan halaman detail layanan dan formulir konsultasi.",
     contributions: [
       "Membangun tampilan dan navigasi website",
       "Membuat halaman layanan dan alur konsultasi",
@@ -121,7 +241,8 @@ export const projects: Project[] = [
   },
   {
     name: "jasapembuatanskripsibandung.web.id",
-    url: "https://jasapembuatanskripsibandung.web.id",
+    url: "https://www.jasapembuatanskripsibandung.web.id",
+    image: "/portfolio/jasapembuatanskripsibandung.jpg",
     year: "2022",
     category: "Company Profile / Layanan Lokal",
     summary:

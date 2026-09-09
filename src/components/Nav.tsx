@@ -5,7 +5,9 @@ import { profile } from "@/data/site";
 
 const links = [
   { href: "#tentang", label: "Tentang" },
+  { href: "#pengalaman", label: "Pengalaman" },
   { href: "#proyek", label: "Proyek" },
+  { href: "#sertifikat", label: "Sertifikat" },
   { href: "#kontak", label: "Kontak" },
 ];
 
@@ -34,7 +36,7 @@ export default function Nav() {
           <span className="text-accent">.</span>
         </a>
 
-        <ul className="hidden gap-8 text-sm text-muted sm:flex">
+        <ul className="hidden gap-6 text-sm text-muted md:flex lg:gap-8">
           {links.map((l) => (
             <li key={l.href}>
               <a href={l.href} className="transition-colors hover:text-foreground">
@@ -48,7 +50,7 @@ export default function Nav() {
           type="button"
           aria-label="Buka menu"
           aria-expanded={open}
-          className="sm:hidden"
+          className="md:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           <span className="block h-0.5 w-6 bg-foreground" />
@@ -58,7 +60,7 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <ul className="flex flex-col gap-1 border-t border-border bg-background px-5 pb-4 pt-2 text-sm sm:hidden">
+        <ul className="flex flex-col gap-1 border-t border-border bg-background px-5 pb-4 pt-2 text-sm md:hidden">
           {links.map((l) => (
             <li key={l.href}>
               <a

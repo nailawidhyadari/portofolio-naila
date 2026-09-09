@@ -26,6 +26,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Skala teks ikut lebar layar: enak di HP, laptop, maupun iPad */
+  font-size: clamp(15px, 0.9rem + 0.2vw, 17px);
 }
 
 body {
@@ -33,6 +35,17 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Judul besar yang fluid */
+.fluid-h1 {
+  font-size: clamp(2.25rem, 1.6rem + 3.4vw, 4rem);
+  line-height: 1.05;
+}
+.fluid-h2 {
+  font-size: clamp(1.6rem, 1.3rem + 1.4vw, 2.25rem);
+  line-height: 1.15;
 }
 
 /* Latar dekoratif dengan gradient halus */
@@ -49,20 +62,36 @@ body {
   color: transparent;
 }
 
-.card-hover {
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+/* -----------------------------------------------------------------
+   Efek "spotlight": saat kursor menyorot satu kartu di dalam grid,
+   kartu itu naik & lebih terang, kartu lain sedikit meredup.
+   Dipakai dengan <div class="spotlight"> pembungkus daftar kartu.
+------------------------------------------------------------------ */
+.spotlight > * {
+  transition:
+    transform 0.28s ease,
+    opacity 0.28s ease,
+    filter 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease;
 }
-.card-hover:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
-  background: var(--surface-2);
+@media (hover: hover) and (pointer: fine) {
+  .spotlight:hover > *:not(:hover) {
+    opacity: 0.55;
+    filter: saturate(0.85) brightness(0.9);
+  }
+  .spotlight:hover > *:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 60%, var(--border));
+    background: var(--surface-2);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .card-hover:hover {
+  .spotlight:hover > *:hover {
     transform: none;
   }
 }

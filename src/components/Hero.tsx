@@ -9,9 +9,7 @@ export default function Hero() {
     <section id="top" className="bg-glow">
       <div className="mx-auto max-w-5xl px-5 pb-20 pt-16 sm:pt-24">
         <p className="font-mono text-sm text-accent-2">Halo, saya</p>
-        <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-6xl">
-          {profile.name}
-        </h1>
+        <h1 className="fluid-h1 mt-3 font-bold tracking-tight">{profile.name}</h1>
         <p className="mt-2 text-xl font-medium text-muted sm:text-2xl">
           <span className="text-gradient">{profile.role}</span>
         </p>
