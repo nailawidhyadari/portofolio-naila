@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Bahan sumber lokal — JANGAN di-commit (berisi PDF asli / data pribadi)
+bahan web/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
