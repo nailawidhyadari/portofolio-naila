@@ -2,10 +2,10 @@ import { profile } from "@/data/site";
 
 export default function About() {
   return (
-    <section id="tentang" className="scroll-mt-20 border-t border-border">
+    <section id="about" className="scroll-mt-20 border-t border-border">
       <div className="mx-auto max-w-5xl px-5 py-20">
         <h2 className="fluid-h2 font-bold tracking-tight">
-          Tentang <span className="text-gradient">Saya</span>
+          About <span className="text-gradient">Me</span>
         </h2>
 
         <div className="mt-8 grid gap-12 md:grid-cols-[1.4fr_1fr]">
@@ -16,7 +16,7 @@ export default function About() {
           </div>
 
           <div>
-            <h3 className="font-mono text-sm text-accent-2">Keahlian</h3>
+            <h3 className="font-mono text-sm text-accent-2">Skills</h3>
             <ul className="mt-4 flex flex-wrap gap-2">
               {profile.skills.map((skill) => (
                 <li

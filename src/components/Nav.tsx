@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import { profile } from "@/data/site";
 
 const links = [
-  { href: "#tentang", label: "Tentang" },
-  { href: "#pengalaman", label: "Pengalaman" },
-  { href: "#proyek", label: "Proyek" },
-  { href: "#sertifikat", label: "Sertifikat" },
-  { href: "#kontak", label: "Kontak" },
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#work", label: "Work" },
+  { href: "#certifications", label: "Certifications" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -48,7 +48,7 @@ export default function Nav() {
 
         <button
           type="button"
-          aria-label="Buka menu"
+          aria-label="Toggle menu"
           aria-expanded={open}
           className="md:hidden"
           onClick={() => setOpen((v) => !v)}

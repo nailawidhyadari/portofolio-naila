@@ -2,19 +2,22 @@ import { contact, profile } from "@/data/site";
 
 export default function Contact() {
   const waHref = `https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(
-    "Halo Naila, saya tertarik untuk bekerja sama membuat website.",
+    "Hi Naila, I'd like to talk about a website project.",
   )}`;
   const igHref = `https://instagram.com/${contact.instagram}`;
 
   return (
-    <section id="kontak" className="scroll-mt-20 border-t border-border bg-glow">
+    <section
+      id="contact"
+      className="scroll-mt-20 border-t border-border bg-glow dot-grid"
+    >
       <div className="mx-auto max-w-5xl px-5 py-20 text-center">
         <h2 className="fluid-h2 font-bold tracking-tight">
-          Mari <span className="text-gradient">Bekerja Sama</span>
+          Let&apos;s <span className="text-gradient">Work Together</span>
         </h2>
         <p className="mx-auto mt-3 max-w-lg text-muted">
-          Punya rencana membuat atau memperbarui website? Kirim pesan, saya akan
-          balas secepatnya.
+          Planning a new website or a refresh of an existing one? Send a message —
+          I&apos;ll get back to you soon.
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">

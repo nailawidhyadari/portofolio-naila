@@ -22,17 +22,18 @@ export const metadata: Metadata = {
   keywords: [
     "Naila Widhyadari",
     "web developer",
-    "portofolio",
+    "portfolio",
     "Next.js",
-    "jasa pembuatan website",
+    "front-end developer",
+    "Indonesia",
   ],
   authors: [{ name: profile.name }],
   openGraph: {
     title: `${profile.name} — ${profile.role}`,
     description: profile.tagline,
     url: siteUrl,
-    siteName: `Portofolio ${profile.name}`,
-    locale: "id_ID",
+    siteName: `${profile.name} — Portfolio`,
+    locale: "en_US",
     type: "website",
   },
   twitter: {
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="id"
+      lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">

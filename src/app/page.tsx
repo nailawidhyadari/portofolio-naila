@@ -15,6 +15,10 @@ const jsonLd = {
   jobTitle: profile.role,
   description: profile.tagline,
   knowsAbout: profile.skills,
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Universitas Pendidikan Indonesia",
+  },
   worksFor: experiences.map((e) => ({
     "@type": "Organization",
     name: e.company,
@@ -27,7 +31,7 @@ const jsonLd = {
   })),
   makesOffer: projects.map((p) => ({
     "@type": "CreativeWork",
-    name: p.name,
+    name: p.title,
     url: p.url,
   })),
 };

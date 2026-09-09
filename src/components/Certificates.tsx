@@ -21,13 +21,13 @@ function DocIcon() {
 
 export default function Certificates() {
   return (
-    <section id="sertifikat" className="scroll-mt-24 border-t border-border">
+    <section id="certifications" className="scroll-mt-24 border-t border-border">
       <div className="mx-auto max-w-5xl px-5 py-16 sm:py-20">
         <h2 className="fluid-h2 font-bold tracking-tight">
-          Sertifikat &amp; <span className="text-gradient">Pelatihan</span>
+          Certifications &amp; <span className="text-gradient">Training</span>
         </h2>
         <p className="mt-3 max-w-xl text-muted">
-          Kursus dan pelatihan yang pernah saya ikuti dan selesaikan.
+          Courses and training programs I&apos;ve completed.
         </p>
 
         <ul className="spotlight mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -54,11 +54,11 @@ export default function Certificates() {
                   className="inline-flex w-max items-center gap-2 rounded-md border border-border px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
                 >
                   <DocIcon />
-                  Lihat sertifikat
+                  View certificate
                 </a>
               ) : (
                 <span className="text-xs text-muted">
-                  Sertifikat tersedia atas permintaan
+                  Available on request
                 </span>
               )}
             </li>

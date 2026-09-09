@@ -1,63 +1,58 @@
 // =============================================================
-//  DATA KONTEN PORTOFOLIO — ubah bagian ini kapan saja.
-//  Semua teks di website diambil dari file ini.
+//  PORTFOLIO CONTENT — edit anything here.
+//  Every piece of text on the site is pulled from this file.
 // =============================================================
 
 export const profile = {
   name: "Naila Widhyadari",
   role: "Web Developer",
+  greeting: "Hi, I'm",
   tagline:
-    "Saya membangun website yang cepat, rapi, dan mudah dikelola — dari ide sampai online.",
+    "I build websites that are fast, clean, and easy to maintain — from the first idea all the way to production.",
 
-  // -----------------------------------------------------------
-  //  TENTANG SAYA — PLACEHOLDER.
-  //  Ganti paragraf di bawah dengan perkenalan versi Anda
-  //  (kirimkan poin-poinnya, nanti dirapikan jadi paragraf).
-  // -----------------------------------------------------------
   about: [
-    "Halo, saya Naila Widhyadari — seorang web developer yang senang mengubah ide menjadi website yang benar-benar dipakai orang.",
-    "Fokus saya adalah membangun tampilan yang bersih dan responsif, menata konten agar mudah ditemukan di mesin pencari, serta memastikan situs berjalan stabil setelah rilis.",
-    "Saya pernah menjadi bagian dari tim di Telkom Indonesia, Balai Besar Pengujian Perangkat Telekomunikasi (BBPPT), dan PT Lentera Statistics Indonesia — pengalaman yang mengasah cara saya bekerja secara terstruktur dan detail.",
+    "I'm Naila Widhyadari, a web developer based in Indonesia. I hold a bachelor's degree in Telecommunication Systems Engineering from Universitas Pendidikan Indonesia (UPI).",
+    "My focus is building websites that load fast, stay easy to maintain, and are ready to grow — handling the whole path from layout and front-end development to SEO, performance, and deployment. I work across the stack with JavaScript, React, Next.js, PHP, and WordPress.",
+    "I also bring hands-on experience with Google Cloud and AWS, Python, and digital marketing, so I think about a site as a whole: how it performs, how people find it, and how it converts. I'm currently a digital marketer at PT Cipherion Corp Indonesia while continuing to design and build websites.",
   ],
 
-  // Ganti angka di bawah kalau perlu.
   stats: [
-    { value: "5+", label: "Website dirilis" },
-    { value: "3", label: "Instansi / perusahaan" },
-    { value: "6", label: "Sertifikat" },
+    { value: "5+", label: "Websites shipped" },
+    { value: "4", label: "Companies & institutions" },
+    { value: "6", label: "Certifications" },
   ],
 
   skills: [
     "Next.js",
     "React",
     "TypeScript",
-    "Tailwind CSS",
-    "Node.js",
-    "HTML & CSS",
     "JavaScript",
     "PHP",
     "WordPress",
-    "SEO On-Page",
+    "HTML & CSS",
+    "Tailwind CSS",
+    "Node.js",
+    "Python",
+    "Google Cloud",
+    "AWS Cloud",
+    "SEO (On-Page)",
+    "Digital Marketing",
+    "Networking",
     "Git & GitHub",
     "Vercel",
-    "Networking Dasar",
-    "AWS Cloud (Dasar)",
     "Responsive Design",
   ],
 };
 
 export const contact = {
-  whatsappNumber: "6285718861554", // format internasional untuk link wa.me
-  whatsappDisplay: "0857-1886-1554",
+  whatsappNumber: "6285718861554", // international format for wa.me links
+  whatsappDisplay: "+62 857-1886-1554",
   instagram: "naiiaawidhyadari",
-  // Email opsional — kosongkan ("") kalau tidak ingin ditampilkan.
-  email: "",
+  email: "", // optional — leave "" to hide
 };
 
 // =============================================================
-//  PENGALAMAN KERJA
-//  role / period / description masih PLACEHOLDER —
-//  kirimkan posisi, periode (bln–thn), dan tugas utamanya.
+//  WORK EXPERIENCE (reverse-chronological)
 // =============================================================
 export type Experience = {
   company: string;
@@ -66,41 +61,52 @@ export type Experience = {
   role: string;
   period: string;
   description: string;
+  current?: boolean;
 };
 
 export const experiences: Experience[] = [
   {
-    company: "Telkom Indonesia",
-    logo: "/logos/telkom.svg",
-    logoAlt: "Logo Telkom Indonesia",
-    role: "— (isi posisi Anda)",
-    period: "— (bln thn – bln thn)",
+    company: "PT Cipherion Corp Indonesia",
+    logo: "/logos/cipherion.png",
+    logoAlt: "Cipherion logo",
+    role: "Digital Marketing",
+    period: "2026 · 1 month",
     description:
-      "Placeholder: 1–2 kalimat tentang peran dan tugas utama Anda selama di Telkom Indonesia.",
-  },
-  {
-    company: "Balai Besar Pengujian Perangkat Telekomunikasi (BBPPT)",
-    logo: "/logos/bbppt-idth.png",
-    logoAlt: "Logo Komdigi — Indonesia Digital Test House (BBPPT)",
-    role: "— (isi posisi Anda)",
-    period: "— (bln thn – bln thn)",
-    description:
-      "Placeholder: 1–2 kalimat tentang peran dan tugas utama Anda selama di BBPPT / IDTH.",
+      "Running digital marketing activities for the company's products and services.",
+    current: true,
   },
   {
     company: "PT Lentera Statistics Indonesia",
     logo: "/logos/lentera-statistik.png",
-    logoAlt: "Logo PT Lentera Statistics Indonesia",
-    role: "— (isi posisi Anda)",
-    period: "— (bln thn – bln thn)",
+    logoAlt: "PT Lentera Statistics Indonesia logo",
+    role: "Digital Marketing & Web Developer",
+    period: "2026 · 2 months",
     description:
-      "Placeholder: 1–2 kalimat tentang peran Anda — mis. membangun dan memelihara website layanan bimbingan akademik.",
+      "Built and maintained websites for the company's academic-guidance services and ran its digital marketing campaigns.",
+  },
+  {
+    company: "Balai Besar Pengujian Perangkat Telekomunikasi (BBPPT)",
+    logo: "/logos/bbppt-idth.png",
+    logoAlt: "Komdigi — Indonesia Digital Test House (BBPPT) logo",
+    role: "Device Test Engineer — SAR Testing",
+    period: "2025 · 1 year",
+    description:
+      "Tested telecommunication devices in the SAR (Specific Absorption Rate) testing laboratory.",
+  },
+  {
+    company: "Telkom Indonesia",
+    logo: "/logos/telkom.svg",
+    logoAlt: "Telkom Indonesia logo",
+    role: "Accounting & Digital Marketing",
+    period: "2024 · 1 year",
+    description:
+      "Handled accounting tasks and supported the team's digital marketing activities.",
   },
 ];
 
 // =============================================================
-//  SERTIFIKAT (data asli dari folder "bahan web")
-//  pdf: "" berarti kartu tampil tanpa tombol lihat PDF.
+//  CERTIFICATIONS & TRAINING (real data from source folder)
+//  pdf: "" => card shows without a "view" button.
 // =============================================================
 export type Certificate = {
   title: string;
@@ -112,59 +118,59 @@ export type Certificate = {
 
 export const certificates: Certificate[] = [
   {
-    title: "Cloud Practitioner Essentials (Belajar Dasar AWS Cloud)",
+    title: "Cloud Practitioner Essentials (AWS Cloud Fundamentals)",
     issuer: "Dicoding × Amazon Web Services",
-    date: "Juli 2024",
+    date: "Jul 2024",
     pdf: "/certificates/aws-cloud-practitioner.pdf",
     tag: "Cloud",
   },
   {
-    title:
-      "DevCoach 137 — Front-End: Belajar Cara Berkomunikasi Web dengan Server",
+    title: "DevCoach 137 — Front-End: How the Web Talks to a Server",
     issuer: "Dicoding Event",
-    date: "Maret 2024",
+    date: "Mar 2024",
     pdf: "/certificates/devcoach-137-frontend.pdf",
     tag: "Front-End",
   },
   {
-    title: "Desain dan Konten Mengenal PHP Framework (MOOCs)",
+    title: "Design & Content: Getting to Know PHP Frameworks (MOOCs)",
     issuer: "Universitas Terbuka",
-    date: "Oktober 2025",
+    date: "Oct 2025",
     pdf: "/certificates/php-framework-ut.pdf",
     tag: "Back-End",
   },
   {
     title: 'Netclass "Exploring Cybersecurity and Networking" — Networking',
     issuer: "NETCOMP 3.0 — Universitas Gadjah Mada",
-    date: "Oktober 2024",
+    date: "Oct 2024",
     pdf: "/certificates/netcomp-networking.pdf",
     tag: "Networking",
   },
   {
     title: "CONNECT Class: Effective Communication / Public Speaking",
     issuer: "Universitas Indonesia × Indonesia Digital Test House (BBPPT)",
-    date: "Desember 2025",
+    date: "Dec 2025",
     pdf: "/certificates/connect-class-public-speaking.pdf",
     tag: "Soft Skill",
   },
   {
     title:
-      "Perancangan Sistem Otomatisasi Pertanian Berbasis Arduino & ESP32 (Lulus, 40 jam)",
-    issuer: "BPVP Belitung — Kementerian Ketenagakerjaan RI",
-    date: "Mei 2026",
-    pdf: "", // sengaja tidak dipublikasikan: file memuat alamat rumah
+      "Agricultural Automation System Design with Arduino & ESP32 (Passed, 40 hrs)",
+    issuer: "BPVP Belitung — Ministry of Manpower, Republic of Indonesia",
+    date: "May 2026",
+    pdf: "", // intentionally not published: the file contains a home address
     tag: "IoT",
   },
 ];
 
 // =============================================================
-//  PROYEK
-//  Screenshot halaman depan tiap situs ada di /public/portfolio.
-//  "summary" & "contributions" masih placeholder umum —
-//  silakan sesuaikan dengan detail sebenarnya.
+//  SELECTED WORK
+//  Front-page screenshots live in /public/portfolio.
+//  `summary` & `contributions` are still generic — adjust them
+//  to the real scope of each project.
 // =============================================================
 export type Project = {
   name: string;
+  title: string;
   url: string;
   image: string;
   year: string;
@@ -177,82 +183,87 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "bimbingandosen.com",
+    title: "Bimbingan Dosen",
     url: "https://bimbingandosen.com",
     image: "/portfolio/bimbingandosen.jpg",
     year: "2024",
-    category: "Platform Layanan",
+    category: "Service Platform",
     summary:
-      "Website platform yang menghubungkan mahasiswa dengan pembimbing untuk kebutuhan konsultasi akademik dan tugas akhir.",
+      "A platform connecting students with mentors for academic consultation and final-project guidance.",
     contributions: [
-      "Membangun struktur halaman dan tampilan utama",
-      "Menyusun halaman layanan, alur pemesanan, dan formulir kontak",
-      "Optimasi kecepatan halaman dan SEO on-page",
-      "Deployment dan konfigurasi domain",
+      "Built the page structure and main UI",
+      "Service pages, ordering flow, and contact form",
+      "Page-speed and on-page SEO work",
+      "Deployment and domain setup",
     ],
-    stack: ["Next.js", "Tailwind CSS", "SEO On-Page"],
+    stack: ["Next.js", "Tailwind CSS", "SEO"],
   },
   {
     name: "bimbingancerdas.id",
+    title: "Bimbingan Cerdas",
     url: "https://bimbingancerdas.id",
     image: "/portfolio/bimbingancerdas.jpg",
     year: "2024",
-    category: "Platform Bimbingan",
+    category: "Mentoring Platform",
     summary:
-      "Situs layanan bimbingan belajar dan pendampingan akademik dengan halaman program serta informasi paket layanan.",
+      "A tutoring and academic-mentoring site with program pages and service-package details.",
     contributions: [
-      "Desain dan implementasi landing page",
-      "Pembuatan komponen daftar program dan harga",
-      "Integrasi tombol kontak WhatsApp",
-      "Pengaturan hosting dan domain .id",
+      "Landing-page design and implementation",
+      "Program list and pricing components",
+      "WhatsApp contact integration",
+      "Hosting and .id domain setup",
     ],
     stack: ["Next.js", "React", "Tailwind CSS"],
   },
   {
     name: "tuntasskripsi.com",
+    title: "Tuntas Skripsi",
     url: "https://tuntasskripsi.com",
     image: "/portfolio/tuntasskripsi.jpg",
     year: "2023",
-    category: "Landing Page Layanan",
+    category: "Service Landing Page",
     summary:
-      "Landing page layanan pendampingan penyelesaian skripsi, difokuskan pada konversi pengunjung menjadi calon klien.",
+      "A landing page for thesis-completion mentoring, focused on turning visitors into leads.",
     contributions: [
-      "Menyusun copywriting dan tata letak halaman",
-      "Membuat bagian testimoni, FAQ, dan call-to-action",
-      "Optimasi tampilan mobile",
-      "Deployment ke produksi",
+      "Copywriting and page layout",
+      "Testimonials, FAQ, and call-to-action sections",
+      "Mobile layout optimisation",
+      "Production deployment",
     ],
-    stack: ["HTML & CSS", "JavaScript", "SEO On-Page"],
+    stack: ["HTML & CSS", "JavaScript", "SEO"],
   },
   {
     name: "solusiskripsi.com",
+    title: "Solusi Skripsi",
     url: "https://solusiskripsi.com",
     image: "/portfolio/solusiskripsi.jpg",
     year: "2023",
-    category: "Landing Page Layanan",
+    category: "Service Landing Page",
     summary:
-      "Website informasi layanan konsultasi dan pendampingan skripsi dengan halaman detail layanan dan formulir konsultasi.",
+      "An information site for thesis consultation services, with detailed service pages and a consultation form.",
     contributions: [
-      "Membangun tampilan dan navigasi website",
-      "Membuat halaman layanan dan alur konsultasi",
-      "Penyesuaian SEO dasar dan struktur meta",
-      "Konfigurasi domain dan hosting",
+      "Site layout and navigation",
+      "Service pages and consultation flow",
+      "Basic SEO and meta structure",
+      "Domain and hosting configuration",
     ],
-    stack: ["WordPress", "HTML & CSS", "SEO On-Page"],
+    stack: ["WordPress", "HTML & CSS", "SEO"],
   },
   {
     name: "jasapembuatanskripsibandung.web.id",
+    title: "Ruang Ilmu Bandung",
     url: "https://www.jasapembuatanskripsibandung.web.id",
     image: "/portfolio/jasapembuatanskripsibandung.jpg",
     year: "2022",
-    category: "Company Profile / Layanan Lokal",
+    category: "Local Service Site",
     summary:
-      "Situs layanan lokal area Bandung dengan penekanan pada pencarian organik untuk kata kunci wilayah tertentu.",
+      "A local service site for the Bandung area, built around organic search for region-specific keywords.",
     contributions: [
-      "Pembuatan struktur halaman berorientasi SEO lokal",
-      "Penulisan konten dan penataan kata kunci",
-      "Optimasi kecepatan dan tampilan responsif",
-      "Deployment dan pemeliharaan",
+      "Local-SEO oriented page structure",
+      "Content writing and keyword placement",
+      "Speed and responsive-layout tuning",
+      "Deployment and maintenance",
     ],
-    stack: ["WordPress", "SEO On-Page", "Responsive Design"],
+    stack: ["WordPress", "SEO", "Responsive Design"],
   },
 ];

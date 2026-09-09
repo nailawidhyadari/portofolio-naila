@@ -62,6 +62,57 @@ body {
   color: transparent;
 }
 
+/* Faint dotted grid texture for section backgrounds */
+.dot-grid {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+/* Decorative code-window mockup in the hero */
+.code-window {
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+.code-window__bar {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.code-window__dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 9999px;
+  background: #3a3a4a;
+}
+.code-window pre {
+  margin: 0;
+  padding: 1.1rem 1.25rem;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--muted);
+  overflow-x: auto;
+}
+.tok-key {
+  color: var(--accent);
+}
+.tok-fn {
+  color: var(--accent-2);
+}
+.tok-str {
+  color: #e5c07b;
+}
+.tok-com {
+  color: #5c5c70;
+}
+
 /* -----------------------------------------------------------------
    Efek "spotlight": saat kursor menyorot satu kartu di dalam grid,
    kartu itu naik & lebih terang, kartu lain sedikit meredup.

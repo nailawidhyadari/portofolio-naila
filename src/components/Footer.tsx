@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 px-5 py-8 text-sm text-muted sm:flex-row">
         <p>
-          © {year} {profile.name}. Dibuat dengan Next.js.
+          © {year} {profile.name}. All rights reserved.
         </p>
         <div className="flex gap-4">
           <a
