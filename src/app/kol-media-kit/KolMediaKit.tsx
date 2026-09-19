@@ -80,25 +80,6 @@ function PlayIcon() {
   );
 }
 
-function FaceIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
-      <circle cx="12" cy="8" r="4" />
-      <path d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6" />
-    </svg>
-  );
-}
-
-function PhotoIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
-      <rect x="4" y="5" width="16" height="14" rx="2" />
-      <circle cx="9" cy="10" r="1.6" />
-      <path d="M4 16l5-4 4 3 3-2 4 3" />
-    </svg>
-  );
-}
-
 export default function KolMediaKit() {
   const rootRef = useRef<HTMLDivElement>(null);
   const [rateTab, setRateTab] = useState<"tiktok" | "instagram" | "bundling">("tiktok");
@@ -306,10 +287,8 @@ export default function KolMediaKit() {
           <div className="kmk-photo-stage">
             <div className="kmk-arch-ring" />
             <div className="kmk-arch">
-              <div className="kmk-ph-placeholder">
-                <FaceIcon />
-                <span>Foto Utama · ganti dengan foto klien</span>
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/kol-media-kit/hero-photo.png" alt="Alya Maheswari" className="kmk-arch-photo" />
             </div>
             <svg
               className="kmk-float kmk-drift"
@@ -366,16 +345,20 @@ export default function KolMediaKit() {
           </div>
           <div className="kmk-collage kmk-reveal" style={{ "--i": 2 } as CSSVars}>
             <div className="kmk-cell kmk-c1">
-              <FaceIcon />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/kol-media-kit/portfolio-3-dayinlife.png" alt="Momen a day in my life" />
             </div>
             <div className="kmk-cell kmk-c2">
-              <PhotoIcon />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/kol-media-kit/portfolio-5-somtam.png" alt="Momen kulineran" />
             </div>
             <div className="kmk-cell kmk-c3">
-              <FaceIcon />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/kol-media-kit/portfolio-4-lukasc.png" alt="Momen sharing keseharian" />
             </div>
             <div className="kmk-cell kmk-c4">
-              <PhotoIcon />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/kol-media-kit/portfolio-1-stroller.png" alt="Momen aktivitas bersama anak" />
             </div>
           </div>
         </div>
@@ -480,9 +463,6 @@ export default function KolMediaKit() {
         <h2 className="kmk-reveal" style={{ "--i": 1, fontSize: "clamp(1.9rem,3.6vw,2.6rem)", marginTop: "10px" } as CSSVars}>
           Konten &amp; endorsement terpilih
         </h2>
-        <p className="kmk-reveal" style={{ "--i": 2, marginTop: "12px", maxWidth: "56ch" } as CSSVars}>
-          Cuplikan konten asli yang pernah tayang — diambil langsung dari portofolio klien.
-        </p>
         <div className="kmk-port-grid">
           {PORTFOLIO_ITEMS.map((item, i) => (
             <div key={item.img} className="kmk-port-card kmk-show kmk-tilt" style={{ "--i": i + 1 } as CSSVars}>
