@@ -5,7 +5,6 @@ import KolMediaKit from "./KolMediaKit";
 const display = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
   variable: "--font-display",
 });
 
@@ -17,7 +16,7 @@ const script = Parisienne({
 
 const body = Urbanist({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700"],
   variable: "--font-body",
 });
 

@@ -81,11 +81,28 @@ export default function KolMediaKit() {
   const rootRef = useRef<HTMLDivElement>(null);
   const [portFilter, setPortFilter] = useState<"all" | "tiktok" | "instagram">("all");
   const [rateTab, setRateTab] = useState<"tiktok" | "instagram" | "bundling">("tiktok");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("#kmk-hero");
 
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // scrollspy: highlight the nav link for the section currently in view
+    const sectionIds = NAV_LINKS.map((l) => l.href.slice(1));
+    const sections = sectionIds
+      .map((id) => root.querySelector<HTMLElement>(`#${id}`))
+      .filter((el): el is HTMLElement => Boolean(el));
+    const spyIo = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(`#${entry.target.id}`);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
+    );
+    sections.forEach((el) => spyIo.observe(el));
 
     // scroll reveal
     const revealEls = root.querySelectorAll<HTMLElement>(".kmk-reveal");
@@ -182,6 +199,7 @@ export default function KolMediaKit() {
     }
 
     return () => {
+      spyIo.disconnect();
       revealIo.disconnect();
       barIo.disconnect();
       countIo.disconnect();
@@ -195,16 +213,35 @@ export default function KolMediaKit() {
         <div className="kmk-brand">
           Alya <em>Maheswari</em>
         </div>
-        <ul className="kmk-navlinks">
+        <ul className={`kmk-navlinks${menuOpen ? " kmk-open" : ""}`}>
           {NAV_LINKS.map((l) => (
             <li key={l.href}>
-              <a href={l.href}>{l.label}</a>
+              <a
+                href={l.href}
+                className={activeSection === l.href ? "kmk-current" : ""}
+                onClick={() => setMenuOpen(false)}
+              >
+                {l.label}
+              </a>
             </li>
           ))}
         </ul>
-        <a href="#kmk-contact" className="kmk-btn kmk-btn-gold" style={{ padding: "10px 22px", fontSize: ".82rem" }}>
-          Kolaborasi
-        </a>
+        <div className="kmk-nav-actions">
+          <a href="#kmk-contact" className="kmk-btn kmk-btn-gold" style={{ padding: "10px 22px", fontSize: ".82rem" }}>
+            Kolaborasi
+          </a>
+          <button
+            type="button"
+            className={`kmk-menu-btn${menuOpen ? " kmk-open" : ""}`}
+            aria-label="Buka menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </nav>
 
       <header className="kmk-hero kmk-wrap" id="kmk-hero">
@@ -271,6 +308,7 @@ export default function KolMediaKit() {
       </header>
 
       <div className="kmk-marquee-band">
+        <p className="kmk-marquee-label">Dipercaya oleh 30+ brand</p>
         <div className="kmk-marquee-track">
           {[...BRANDS, ...BRANDS].map((b, i) => (
             <span key={i}>{b}</span>
@@ -279,6 +317,14 @@ export default function KolMediaKit() {
       </div>
 
       <section id="kmk-about" className="kmk-wrap">
+        <svg
+          className="kmk-float kmk-drift kmk-d2"
+          style={{ top: "6px", right: "4%", width: "20px" }}
+          viewBox="0 0 24 24"
+          fill="#C9808C"
+        >
+          <circle cx="12" cy="12" r="3" />
+        </svg>
         <div className="kmk-about-grid">
           <div>
             <div className="kmk-eyebrow kmk-reveal">tentang</div>
@@ -388,9 +434,27 @@ export default function KolMediaKit() {
             </div>
           </div>
         </div>
+        <div className="kmk-divider" aria-hidden="true">
+          <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+            <path
+              d="M0,32 C240,64 480,64 720,40 C960,16 1200,8 1440,32 L1440,70 L0,70 Z"
+              style={{ fill: "var(--cream)" }}
+            />
+          </svg>
+        </div>
       </section>
 
       <section id="kmk-portfolio" className="kmk-portfolio kmk-wrap">
+        <svg
+          className="kmk-float kmk-drift"
+          style={{ top: "-6px", right: "6%", width: "26px" }}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#B98A4E"
+          strokeWidth="1.2"
+        >
+          <path d="M12 2c1 3 3 5 6 6-3 1-5 3-6 6-1-3-3-5-6-6 3-1 5-3 6-6Z" />
+        </svg>
         <div className="kmk-eyebrow kmk-reveal">portofolio</div>
         <h2 className="kmk-reveal" style={{ "--i": 1, fontSize: "clamp(1.9rem,3.6vw,2.6rem)", marginTop: "10px" } as CSSVars}>
           Konten &amp; endorsement terpilih
