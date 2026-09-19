@@ -5,6 +5,8 @@ import "./kol-media-kit.css";
 
 type CSSVars = React.CSSProperties & Record<`--${string}`, string | number>;
 
+const TIKTOK_PROFILE_URL = "https://www.tiktok.com/@maudifarah";
+
 const NAV_LINKS = [
   { href: "#kmk-about", label: "Tentang" },
   { href: "#kmk-stats", label: "Audience" },
@@ -13,10 +15,55 @@ const NAV_LINKS = [
   { href: "#kmk-terms", label: "S&K" },
 ];
 
-const BRAND_LOGO_SHEETS = [
-  { src: "/kol-media-kit/logos-skincare.png", alt: "Logo brand beauty & skincare yang pernah bekerja sama", w: 680, h: 235 },
-  { src: "/kol-media-kit/logos-mombaby.png", alt: "Logo brand mom & baby yang pernah bekerja sama", w: 565, h: 155 },
-  { src: "/kol-media-kit/logos-parfume.png", alt: "Logo brand parfum yang pernah bekerja sama", w: 365, h: 75 },
+const BRAND_LOGOS = [
+  "/kol-media-kit/logos/logo-01.png",
+  "/kol-media-kit/logos/logo-02.png",
+  "/kol-media-kit/logos/logo-03.png",
+  "/kol-media-kit/logos/logo-04.png",
+  "/kol-media-kit/logos/logo-05.png",
+  "/kol-media-kit/logos/logo-06.png",
+  "/kol-media-kit/logos/logo-07.png",
+  "/kol-media-kit/logos/logo-08.png",
+  "/kol-media-kit/logos/logo-09.png",
+  "/kol-media-kit/logos/logo-10.png",
+  "/kol-media-kit/logos/logo-11.png",
+  "/kol-media-kit/logos/logo-12.png",
+  "/kol-media-kit/logos/logo-13.png",
+  "/kol-media-kit/logos/logo-14.png",
+  "/kol-media-kit/logos/logo-15.png",
+  "/kol-media-kit/logos/logo-16.png",
+  "/kol-media-kit/logos/logo-17.png",
+  "/kol-media-kit/logos/logo-18.png",
+  "/kol-media-kit/logos/logo-19.png",
+  "/kol-media-kit/logos/logo-20.png",
+  "/kol-media-kit/logos/logo-21.png",
+  "/kol-media-kit/logos/logo-22.png",
+  "/kol-media-kit/logos/logo-23.png",
+  "/kol-media-kit/logos/logo-24.png",
+  "/kol-media-kit/logos/logo-25.png",
+  "/kol-media-kit/logos/logo-26.png",
+  "/kol-media-kit/logos/logo-27.png",
+  "/kol-media-kit/logos/logo-28.png",
+  "/kol-media-kit/logos/logo-29.png",
+  "/kol-media-kit/logos/logo-30.png",
+  "/kol-media-kit/logos/logo-31.png",
+  "/kol-media-kit/logos/logo-32.png",
+  "/kol-media-kit/logos/logo-33.png",
+  "/kol-media-kit/logos/logo-34.png",
+  "/kol-media-kit/logos/logo-35.png",
+  "/kol-media-kit/logos/logo-36.png",
+  "/kol-media-kit/logos/logo-37.png",
+  "/kol-media-kit/logos/logo-38.png",
+  "/kol-media-kit/logos/logo-39.png",
+  "/kol-media-kit/logos/logo-40.png",
+  "/kol-media-kit/logos/logo-41.png",
+  "/kol-media-kit/logos/logo-42.png",
+  "/kol-media-kit/logos/logo-43.png",
+  "/kol-media-kit/logos/logo-44.png",
+  "/kol-media-kit/logos/logo-45.png",
+  "/kol-media-kit/logos/logo-46.png",
+  "/kol-media-kit/logos/logo-48.png",
+  "/kol-media-kit/logos/logo-49.png",
 ];
 
 const PORTFOLIO_ITEMS = [
@@ -302,12 +349,12 @@ export default function KolMediaKit() {
 
       <div className="kmk-marquee-band">
         <p className="kmk-marquee-label">Dipercaya oleh 30+ brand</p>
-        <div className="kmk-logo-sheets">
-          {BRAND_LOGO_SHEETS.map((logo) => (
-            <div className="kmk-logo-card" key={logo.src}>
+        <div className="kmk-marquee-track">
+          {[...BRAND_LOGOS, ...BRAND_LOGOS].map((src, i) => (
+            <span className="kmk-logo-chip" key={i}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={logo.src} alt={logo.alt} width={logo.w} height={logo.h} />
-            </div>
+              <img src={src} alt="" loading="lazy" />
+            </span>
           ))}
         </div>
       </div>
@@ -462,7 +509,13 @@ export default function KolMediaKit() {
         <div className="kmk-port-grid">
           {PORTFOLIO_ITEMS.map((item, i) => (
             <div key={item.img} className="kmk-port-card kmk-show kmk-tilt" style={{ "--i": i + 1 } as CSSVars}>
-              <div className="kmk-port-inner">
+              <a
+                className="kmk-port-inner"
+                href={TIKTOK_PROFILE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Tonton "${item.cap}" di TikTok @maudifarah`}
+              >
                 <div className="kmk-port-thumb">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={item.img} alt={item.cap} loading="lazy" />
@@ -473,7 +526,7 @@ export default function KolMediaKit() {
                 </div>
                 <div className="kmk-port-cap">{item.cap}</div>
                 <div className="kmk-port-sub">{item.sub}</div>
-              </div>
+              </a>
             </div>
           ))}
         </div>

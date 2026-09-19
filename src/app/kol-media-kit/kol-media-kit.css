@@ -393,35 +393,64 @@
   margin: 0 0 14px;
   opacity: 0.85;
 }
-.kmk-root .kmk-logo-sheets {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  justify-content: center;
-  gap: 18px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding-inline: clamp(20px, 5vw, 64px);
+.kmk-root .kmk-marquee-band::before,
+.kmk-root .kmk-marquee-band::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
 }
-.kmk-root .kmk-logo-card {
-  background: var(--surface);
-  border-radius: 16px;
-  padding: 16px 20px;
-  box-shadow: 0 16px 30px -18px rgba(0, 0, 0, 0.5);
+.kmk-root .kmk-marquee-band::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--plum), transparent);
+}
+.kmk-root .kmk-marquee-band::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--plum), transparent);
+}
+.kmk-root .kmk-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: max-content;
+  animation: kmk-scroll 38s linear infinite;
+}
+@keyframes kmk-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.kmk-root .kmk-logo-chip {
+  flex: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1 1 260px;
-  max-width: 420px;
-  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 10px 16px;
+  height: 52px;
+  box-shadow: 0 12px 22px -14px rgba(0, 0, 0, 0.5);
 }
-.kmk-root .kmk-logo-card:hover {
-  transform: translateY(-4px);
-}
-.kmk-root .kmk-logo-card img {
+.kmk-root .kmk-logo-chip img {
   display: block;
-  width: 100%;
-  height: auto;
+  height: 26px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+}
+@media (max-width: 620px) {
+  .kmk-root .kmk-logo-chip {
+    height: 44px;
+    padding: 8px 12px;
+  }
+  .kmk-root .kmk-logo-chip img {
+    height: 20px;
+  }
 }
 
 /* ---------- about / collage ---------- */
@@ -670,6 +699,7 @@
   display: block;
 }
 .kmk-root .kmk-port-inner {
+  display: block;
   border-radius: 26px;
   padding: 14px 14px 20px;
   background: var(--surface);
@@ -677,6 +707,9 @@
   box-shadow: var(--shadow);
   transition: transform 0.12s linear;
   transform-style: preserve-3d;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 .kmk-root .kmk-port-thumb {
   aspect-ratio: 9/16;
