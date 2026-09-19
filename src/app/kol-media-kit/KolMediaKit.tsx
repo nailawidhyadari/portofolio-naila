@@ -13,17 +13,10 @@ const NAV_LINKS = [
   { href: "#kmk-terms", label: "S&K" },
 ];
 
-const BRANDS = [
-  "GLOWA",
-  "BUMI SKIN",
-  "LITTLE NEST",
-  "MAKNA BEAUTY",
-  "SERENE CO.",
-  "DAUN & AIR",
-  "RUMAH BAYI",
-  "KAYU MANIS PARFUME",
-  "PETALS CLINIC",
-  "TUMBUH ORGANIC",
+const BRAND_LOGO_SHEETS = [
+  { src: "/kol-media-kit/logos-skincare.png", alt: "Logo brand beauty & skincare yang pernah bekerja sama", w: 680, h: 235 },
+  { src: "/kol-media-kit/logos-mombaby.png", alt: "Logo brand mom & baby yang pernah bekerja sama", w: 565, h: 155 },
+  { src: "/kol-media-kit/logos-parfume.png", alt: "Logo brand parfum yang pernah bekerja sama", w: 365, h: 75 },
 ];
 
 const PORTFOLIO_ITEMS = [
@@ -172,10 +165,10 @@ export default function KolMediaKit() {
           const r = card.getBoundingClientRect();
           const x = (e.clientX - r.left) / r.width - 0.5;
           const y = (e.clientY - r.top) / r.height - 0.5;
-          card.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateY(-4px)`;
+          card.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateY(-4px) scale(1.05)`;
         };
         const onLeave = () => {
-          card.style.transform = "rotateY(0deg) rotateX(0deg) translateY(0)";
+          card.style.transform = "rotateY(0deg) rotateX(0deg) translateY(0) scale(1)";
         };
         card.addEventListener("mousemove", onMove);
         card.addEventListener("mouseleave", onLeave);
@@ -309,9 +302,12 @@ export default function KolMediaKit() {
 
       <div className="kmk-marquee-band">
         <p className="kmk-marquee-label">Dipercaya oleh 30+ brand</p>
-        <div className="kmk-marquee-track">
-          {[...BRANDS, ...BRANDS].map((b, i) => (
-            <span key={i}>{b}</span>
+        <div className="kmk-logo-sheets">
+          {BRAND_LOGO_SHEETS.map((logo) => (
+            <div className="kmk-logo-card" key={logo.src}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={logo.src} alt={logo.alt} width={logo.w} height={logo.h} />
+            </div>
           ))}
         </div>
       </div>
