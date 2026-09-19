@@ -891,11 +891,22 @@
   font-size: 0.78rem;
   color: var(--ink-soft);
   text-decoration: line-through;
+  white-space: nowrap;
 }
 .kmk-root .kmk-bundle-card .kmk-now {
   font-family: var(--font-display), serif;
   font-size: 1.5rem;
   color: var(--rose-deep);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+@media (max-width: 460px) {
+  .kmk-root .kmk-bundle-card {
+    flex-wrap: wrap;
+  }
+  .kmk-root .kmk-bundle-card .kmk-now {
+    margin-left: auto;
+  }
 }
 
 /* ---------- terms ---------- */

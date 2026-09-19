@@ -736,11 +736,7 @@ export default function KolMediaKit() {
       </section>
 
       <footer>
-        <div>Media Kit Template — dirancang untuk klien KOL / Influencer</div>
-        <div className="kmk-note">
-          Semua nama, angka, dan foto pada halaman ini adalah contoh placeholder untuk didemonstrasikan, silakan
-          diganti dengan data klien asli.
-        </div>
+        <div>© {new Date().getFullYear()} Alya Maheswari</div>
       </footer>
 
       <a href="#kmk-contact" className="kmk-wa-float" aria-label="Chat via WhatsApp" title="Chat via WhatsApp">
