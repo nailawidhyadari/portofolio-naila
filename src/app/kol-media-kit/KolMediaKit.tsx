@@ -288,7 +288,7 @@ export default function KolMediaKit() {
             <div className="kmk-arch-ring" />
             <div className="kmk-arch">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/kol-media-kit/hero-photo.png" alt="Alya Maheswari" className="kmk-arch-photo" />
+              <img src="/kol-media-kit/hero-photo.jpg" alt="Alya Maheswari" className="kmk-arch-photo" />
             </div>
             <svg
               className="kmk-float kmk-drift"
@@ -346,19 +346,19 @@ export default function KolMediaKit() {
           <div className="kmk-collage kmk-reveal" style={{ "--i": 2 } as CSSVars}>
             <div className="kmk-cell kmk-c1">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/kol-media-kit/portfolio-3-dayinlife.png" alt="Momen a day in my life" />
+              <img src="/kol-media-kit/about-1-parenting.jpg" alt="Momen gentle parenting bersama anak" />
             </div>
             <div className="kmk-cell kmk-c2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/kol-media-kit/portfolio-5-somtam.png" alt="Momen kulineran" />
+              <img src="/kol-media-kit/about-2-athome.jpg" alt="Momen di rumah bersama anak" />
             </div>
             <div className="kmk-cell kmk-c3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/kol-media-kit/portfolio-4-lukasc.png" alt="Momen sharing keseharian" />
+              <img src="/kol-media-kit/about-3-daily.jpg" alt="Keseharian sebagai ibu satu anak" />
             </div>
             <div className="kmk-cell kmk-c4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/kol-media-kit/portfolio-1-stroller.png" alt="Momen aktivitas bersama anak" />
+              <img src="/kol-media-kit/about-4-diet.jpg" alt="Momen keseharian lainnya" />
             </div>
           </div>
         </div>
