@@ -707,6 +707,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--cream-deep);
+}
+.kmk-root .kmk-port-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.kmk-root .kmk-port-card:hover .kmk-port-thumb img {
+  transform: scale(1.05);
 }
 .kmk-root .kmk-port-thumb .kmk-play {
   width: 52px;
@@ -752,30 +764,6 @@
   font-size: 0.76rem;
   color: var(--ink-soft);
   margin-top: 2px;
-}
-.kmk-root .kmk-t1 {
-  background: linear-gradient(160deg, #f0c6c0, #b9707e);
-}
-.kmk-root .kmk-t2 {
-  background: linear-gradient(160deg, #e3d3b6, #b98a4e);
-}
-.kmk-root .kmk-t3 {
-  background: linear-gradient(160deg, #d9b4c4, #7a3b52);
-}
-.kmk-root .kmk-t4 {
-  background: linear-gradient(160deg, #f3dcc8, #c98b5c);
-}
-.kmk-root .kmk-t5 {
-  background: linear-gradient(160deg, #e6bfc9, #94435c);
-}
-.kmk-root .kmk-t6 {
-  background: linear-gradient(160deg, #ddcbb0, #9c7a45);
-}
-.kmk-root .kmk-t7 {
-  background: linear-gradient(160deg, #edcfd6, #a85d6c);
-}
-.kmk-root .kmk-t8 {
-  background: linear-gradient(160deg, #e9dac5, #8e5b3c);
 }
 
 /* ---------- rate card ---------- */

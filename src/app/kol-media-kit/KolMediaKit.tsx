@@ -27,14 +27,36 @@ const BRANDS = [
 ];
 
 const PORTFOLIO_ITEMS = [
-  { cat: "tiktok", tone: "kmk-t1", badge: "TikTok", cap: "Review Skincare Rutin Malam", sub: "Kolaborasi · Glowa" },
-  { cat: "tiktok", tone: "kmk-t2", badge: "TikTok", cap: "A Day in My Life: Me Time", sub: "Konten Organik" },
-  { cat: "instagram", tone: "kmk-t3", badge: "Reels", cap: "Unboxing Parcel Brand", sub: "Kolaborasi · Little Nest" },
-  { cat: "tiktok", tone: "kmk-t4", badge: "TikTok", cap: "Tutorial Makeup 5 Menit", sub: "Kolaborasi · Makna Beauty" },
-  { cat: "instagram", tone: "kmk-t5", badge: "Reels", cap: "Baby Essentials Must Have", sub: "Kolaborasi · Rumah Bayi" },
-  { cat: "tiktok", tone: "kmk-t6", badge: "TikTok", cap: "Visit & Review Flagship Store", sub: "Kolaborasi · Petals Clinic" },
-  { cat: "instagram", tone: "kmk-t7", badge: "Story", cap: "Story Takeover Skincare", sub: "Kolaborasi · Serene Co." },
-  { cat: "tiktok", tone: "kmk-t8", badge: "TikTok", cap: "Daily Vlog: Weekend Family Time", sub: "Konten Organik" },
+  {
+    img: "/kol-media-kit/portfolio-1-stroller.png",
+    badge: "TikTok",
+    cap: "Stroller Untuk Mommy Mommy Mandiri",
+    sub: "Konten Organik",
+  },
+  {
+    img: "/kol-media-kit/portfolio-2-mpasi.png",
+    badge: "TikTok",
+    cap: "Best Buy Alat MPASI yang Kepake Tiap Hari",
+    sub: "Review Produk",
+  },
+  {
+    img: "/kol-media-kit/portfolio-3-dayinlife.png",
+    badge: "TikTok",
+    cap: "A Day in My Life",
+    sub: "Konten Organik",
+  },
+  {
+    img: "/kol-media-kit/portfolio-4-lukasc.png",
+    badge: "TikTok",
+    cap: "Luka SC Kok Sembuhnya Lama?",
+    sub: "Konten Organik",
+  },
+  {
+    img: "/kol-media-kit/portfolio-5-somtam.png",
+    badge: "TikTok",
+    cap: "Makan Som Tam Part 200",
+    sub: "Konten Organik",
+  },
 ];
 
 const TERMS = [
@@ -79,7 +101,6 @@ function PhotoIcon() {
 
 export default function KolMediaKit() {
   const rootRef = useRef<HTMLDivElement>(null);
-  const [portFilter, setPortFilter] = useState<"all" | "tiktok" | "instagram">("all");
   const [rateTab, setRateTab] = useState<"tiktok" | "instagram" | "bundling">("tiktok");
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#kmk-hero");
@@ -460,29 +481,15 @@ export default function KolMediaKit() {
           Konten &amp; endorsement terpilih
         </h2>
         <p className="kmk-reveal" style={{ "--i": 2, marginTop: "12px", maxWidth: "56ch" } as CSSVars}>
-          Ganti tiap thumbnail dengan cuplikan video asli klien — mockup di bawah sudah disiapkan dengan rasio
-          vertikal siap pakai.
+          Cuplikan konten asli yang pernah tayang — diambil langsung dari portofolio klien.
         </p>
-        <div className="kmk-filter-row kmk-reveal" style={{ "--i": 3 } as CSSVars}>
-          {(["all", "tiktok", "instagram"] as const).map((f) => (
-            <button
-              key={f}
-              type="button"
-              className={`kmk-filter-btn${portFilter === f ? " kmk-active" : ""}`}
-              onClick={() => setPortFilter(f)}
-            >
-              {f === "all" ? "Semua" : f === "tiktok" ? "TikTok" : "Instagram"}
-            </button>
-          ))}
-        </div>
         <div className="kmk-port-grid">
           {PORTFOLIO_ITEMS.map((item, i) => (
-            <div
-              key={i}
-              className={`kmk-port-card kmk-tilt${portFilter === "all" || portFilter === item.cat ? " kmk-show" : ""}`}
-            >
+            <div key={item.img} className="kmk-port-card kmk-show kmk-tilt" style={{ "--i": i + 1 } as CSSVars}>
               <div className="kmk-port-inner">
-                <div className={`kmk-port-thumb ${item.tone}`}>
+                <div className="kmk-port-thumb">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={item.img} alt={item.cap} loading="lazy" />
                   <span className="kmk-port-badge">{item.badge}</span>
                   <div className="kmk-play">
                     <PlayIcon />
@@ -502,7 +509,7 @@ export default function KolMediaKit() {
           Paket kerja sama
         </h2>
         <p className="kmk-reveal" style={{ "--i": 2, marginTop: "12px", maxWidth: "56ch" } as CSSVars}>
-          *Seluruh angka di bawah adalah contoh — sesuaikan dengan rate card asli klien sebelum dipakai.
+          Harga belum termasuk pajak. Detail lengkap ada di Syarat &amp; Ketentuan.
         </p>
         <div className="kmk-rate-tabs kmk-reveal" style={{ "--i": 3 } as CSSVars}>
           {(["tiktok", "instagram", "bundling"] as const).map((t) => (
@@ -521,68 +528,73 @@ export default function KolMediaKit() {
           <ul className="kmk-rate-list">
             <li>
               <span className="kmk-r-name">
-                Review Produk<span className="kmk-r-note">Video 15–60 detik</span>
+                TikTok Review Video<span className="kmk-r-note">15–90 detik</span>
               </span>
               <span className="kmk-r-dots" />
-              <span className="kmk-r-price">Rp 650rb</span>
+              <span className="kmk-r-price">Rp 700rb</span>
             </li>
             <li>
               <span className="kmk-r-name">
-                A Day in My Life / Vlog<span className="kmk-r-note">Video 60–120 detik</span>
+                A Day in My Life / Daily Vlog<span className="kmk-r-note">60–120 detik</span>
               </span>
               <span className="kmk-r-dots" />
-              <span className="kmk-r-price">Rp 1,1jt</span>
+              <span className="kmk-r-price">Rp 1,2jt</span>
+            </li>
+            <li>
+              <span className="kmk-r-name">Visit Store / Event Attendance Only</span>
+              <span className="kmk-r-dots" />
+              <span className="kmk-r-price">Rp 1,5jt</span>
+            </li>
+            <li>
+              <span className="kmk-r-name">Visit Store incl. TikTok Video</span>
+              <span className="kmk-r-dots" />
+              <span className="kmk-r-price">Rp 2jt</span>
             </li>
             <li>
               <span className="kmk-r-name">TikTok Story</span>
               <span className="kmk-r-dots" />
-              <span className="kmk-r-price">Rp 300rb</span>
-            </li>
-            <li>
-              <span className="kmk-r-name">Visit Store / Event Only</span>
-              <span className="kmk-r-dots" />
-              <span className="kmk-r-price">Rp 1,4jt</span>
-            </li>
-            <li>
-              <span className="kmk-r-name">Visit Store + Video</span>
-              <span className="kmk-r-dots" />
-              <span className="kmk-r-price">Rp 1,85jt</span>
+              <span className="kmk-r-price">Rp 350rb</span>
             </li>
           </ul>
           <div className="kmk-addendum">
             <h3>Additional Request</h3>
             <ul className="kmk-rate-list kmk-rate-two-col">
               <li>
+                <span className="kmk-r-name">Yellow Cart</span>
+                <span className="kmk-r-dots" />
+                <span className="kmk-r-price">Rp 150rb</span>
+              </li>
+              <li>
+                <span className="kmk-r-name">1 Minggu Pin Konten</span>
+                <span className="kmk-r-dots" />
+                <span className="kmk-r-price">Rp 400rb</span>
+              </li>
+              <li>
                 <span className="kmk-r-name">
                   Owning Content <span className="kmk-r-note">selamanya</span>
                 </span>
                 <span className="kmk-r-dots" />
-                <span className="kmk-r-price">Rp 1,8jt</span>
+                <span className="kmk-r-price">Rp 2jt</span>
               </li>
               <li>
                 <span className="kmk-r-name">Code Boost 30 Hari</span>
                 <span className="kmk-r-dots" />
-                <span className="kmk-r-price">Rp 200rb</span>
+                <span className="kmk-r-price">Rp 250rb</span>
               </li>
               <li>
                 <span className="kmk-r-name">Code Boost 365 Hari</span>
                 <span className="kmk-r-dots" />
-                <span className="kmk-r-price">Rp 450rb</span>
+                <span className="kmk-r-price">Rp 500rb</span>
               </li>
               <li>
-                <span className="kmk-r-name">Pin Konten 1 Minggu</span>
-                <span className="kmk-r-dots" />
-                <span className="kmk-r-price">Rp 350rb</span>
-              </li>
-              <li>
-                <span className="kmk-r-name">Baby / Family in Frame</span>
+                <span className="kmk-r-name">Family / Baby in Frame</span>
                 <span className="kmk-r-dots" />
                 <span className="kmk-r-price">Rp 300rb</span>
               </li>
               <li>
                 <span className="kmk-r-name">Mirroring Reels / IGS</span>
                 <span className="kmk-r-dots" />
-                <span className="kmk-r-price">Rp 200rb</span>
+                <span className="kmk-r-price">Rp 250rb</span>
               </li>
             </ul>
           </div>
@@ -593,43 +605,51 @@ export default function KolMediaKit() {
             <li>
               <span className="kmk-r-name">Instagram Reels</span>
               <span className="kmk-r-dots" />
-              <span className="kmk-r-price">Rp 400rb</span>
+              <span className="kmk-r-price">Rp 450rb</span>
             </li>
             <li>
               <span className="kmk-r-name">Instagram Feed Video</span>
               <span className="kmk-r-dots" />
-              <span className="kmk-r-price">Rp 400rb</span>
+              <span className="kmk-r-price">Rp 450rb</span>
             </li>
             <li>
-              <span className="kmk-r-name">Story Session</span>
+              <span className="kmk-r-name">Instagram Story Session</span>
               <span className="kmk-r-dots" />
-              <span className="kmk-r-price">Rp 300rb</span>
+              <span className="kmk-r-price">Rp 350rb</span>
             </li>
             <li>
               <span className="kmk-r-name">Instagram Story</span>
               <span className="kmk-r-dots" />
-              <span className="kmk-r-price">Rp 90rb</span>
+              <span className="kmk-r-price">Rp 100rb</span>
             </li>
             <li>
-              <span className="kmk-r-name">Feed Photo</span>
+              <span className="kmk-r-name">Instagram Feed Photo</span>
               <span className="kmk-r-dots" />
-              <span className="kmk-r-price">Rp 220rb</span>
+              <span className="kmk-r-price">Rp 250rb</span>
             </li>
             <li>
               <span className="kmk-r-name">
                 Owning Photo/Video <span className="kmk-r-note">selamanya</span>
               </span>
               <span className="kmk-r-dots" />
-              <span className="kmk-r-price">Rp 900rb</span>
+              <span className="kmk-r-price">Rp 1jt</span>
+            </li>
+            <li>
+              <span className="kmk-r-name">Additional Collab</span>
+              <span className="kmk-r-dots" />
+              <span className="kmk-r-price">Rp 300rb</span>
             </li>
           </ul>
         </div>
 
         <div className={`kmk-rate-panel${rateTab === "bundling" ? " kmk-show" : ""}`}>
           {[
-            { name: "1 Video + Code Boost 365 + Free Mirroring IGS", was: "Rp 1.300.000", now: "Rp 950rb" },
-            { name: "3 Video + Code Boost 365 + Mirroring Reels", was: "Rp 4.500.000", now: "Rp 3,2jt" },
-            { name: "5 Video Paket Lengkap + Free Req Tanggal", was: "Rp 7.500.000", now: "Rp 4,2jt" },
+            { name: "1 Video TikTok + Yellow Cart + Code Boost 365 + Free Req Tanggal + Free Mirroring IGS", was: "Rp 1.350.000", now: "Rp 1jt" },
+            { name: "2 Video TikTok + Yellow Cart + Code Boost 365 + Free Req Tanggal + Free Mirroring IGS", was: "Rp 2.700.000", now: "Rp 2jt" },
+            { name: "3 Video TikTok + Yellow Cart + Code Boost 365 + Mirroring Reels + Free Req Tanggal + Free Mirroring IGS", was: "Rp 4.800.000", now: "Rp 3,5jt" },
+            { name: "5 Video TikTok + Yellow Cart + Code Boost 365 + Mirroring Reels + Free Req Tanggal + Free Mirroring IGS", was: "Rp 8.000.000", now: "Rp 4,5jt" },
+            { name: "Additional Video TikTok + Family/Baby in Frame + Mirroring Reels Family/Baby in Frame", was: "Rp 1.750.000", now: "Rp 1,25jt" },
+            { name: "1 Video TikTok + Baby in Frame", was: "Rp 1.000.000", now: "Rp 850rb" },
           ].map((b) => (
             <div className="kmk-bundle-card" key={b.name}>
               <div>
